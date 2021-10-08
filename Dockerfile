@@ -7,7 +7,7 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 RUN apt update && \
-    apt install -y python-pip3 git wget sudo && \
+    apt install -y pip git wget sudo && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/
