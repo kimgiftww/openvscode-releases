@@ -7,7 +7,7 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 RUN apt update && \
-    apt install -y git wget sudo && \
+    apt install -y python-pip3 git wget sudo && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/
@@ -40,6 +40,7 @@ ENV VISUAL=code
 ENV GIT_EDITOR="code --wait"
 ENV OPENVSCODE_SERVER_ROOT=/home/${RELEASE_TAG}-linux-x64
 
+EXPOSE 5000
 EXPOSE 3000
 
 ENTRYPOINT ${OPENVSCODE_SERVER_ROOT}/server.sh
