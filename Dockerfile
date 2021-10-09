@@ -9,8 +9,6 @@ ARG USER_GID=$USER_UID
 RUN apt update && \
     apt install -y python3 git wget sudo && \
     rm -rf /var/lib/apt/lists/*
-    
-RUN sudo apt install python3-pip
 
 WORKDIR /home/
 
